@@ -24,7 +24,7 @@ const Register = () => {
       return;
     }
     let responseData;
-    await fetch('http://192.168.1.38:4000/signup', {
+    await fetch('https://luxeona-server.onrender.com/signup', {
       method: 'POST',
       headers: {
         Accept: 'application/json',

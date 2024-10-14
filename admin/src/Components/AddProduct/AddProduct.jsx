@@ -21,7 +21,7 @@ const AddProduct = () => {
     let formData = new FormData();
     formData.append('product', image);
     try {
-      const uploadResponse = await fetch('http://192.168.1.38:4000/upload', {
+      const uploadResponse = await fetch('https://luxeona-server.onrender.com/upload', {
         method: 'POST',
         headers: {
           Accept: 'application/json',
@@ -32,7 +32,7 @@ const AddProduct = () => {
       if (responseData.success) {
         product.image = responseData.image_url;
         console.log(product);
-        const addProductResponse = await fetch('http://192.168.1.38:4000/addproduct', {
+        const addProductResponse = await fetch('https://luxeona-server.onrender.com/addproduct', {
           method: 'POST',
           headers: {
             Accept: 'application/json',

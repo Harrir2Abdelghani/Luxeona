@@ -1,5 +1,5 @@
 // here in this file we will create the main express node js server file , some endpoints and  the main architecture of the mongodb schema and 
-const port = 4000;
+const port = process.env.PORT || 4000;
 const express = require("express");
 const app = express();
 const cors = require("cors");

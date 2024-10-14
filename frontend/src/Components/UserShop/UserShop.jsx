@@ -28,7 +28,7 @@ const UserShop = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch('http://192.168.1.38:4000/allproducts'); 
+        const response = await fetch('https://luxeona-server.onrender.com/allproducts'); 
         const data = await response.json();
         setProducts(data);
         setFilteredProducts(data); 

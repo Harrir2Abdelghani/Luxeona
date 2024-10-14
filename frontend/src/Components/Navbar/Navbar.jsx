@@ -61,18 +61,22 @@ function Navbar() {
             Contact Us
           </li>
           <div className="flex gap-10 mt-4 sm:hidden">
+          <Link to="/signin">
             <button
               className="bg-deepPlum  text-white px-4 py-2 rounded-full hover:bg-roseGold transition duration-300 shadow-md"
               onClick={() => handleNavigation("/signin")}
             >
               Sign In
             </button>
+            </Link>
+            <Link to="/signup">
             <button
               className="bg-blushPink  text-white px-4 py-2 rounded-full hover:bg-roseGold transition duration-300 shadow-md"
               onClick={() => handleNavigation("/signup")}
             >
               Sign Up
             </button>
+            </Link>
           </div>
         </ul>
         <div

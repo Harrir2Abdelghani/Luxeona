@@ -8,13 +8,16 @@ const multer = require("multer");
 const jwt = require("jsonwebtoken");
 const path = require("path");
 const Stripe = require('stripe');
-const stripe = Stripe('sk_test_51Q84BsRp7scwrB2NfI6ytF3HxruAcCJn3lG6UQxKNeLAiJ40xBpIqyK76jiOJrMuimSN3X280OQfRQXE6GglRE6D00YLerSdma');
+require('dotenv').config();
 
+const StripeKEY = process.env.STRIPE_KEY
+const stripe = Stripe(StripeKEY);
 
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect("mongodb+srv://ghaniabdou20:luxeona2024@cluster0.gmlez.mongodb.net/e-commerce");;
+const mongoURI = process.env.MONGO_URI;
+mongoose.connect(mongoURI);;
 
 app.get("/", (req, res) => {
     res.send("API is running");

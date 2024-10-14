@@ -86,9 +86,9 @@ const UserPage = () => {
   return (
     <div className="flex flex-col items-center mb-6 p-6 text-xl bg-gray-200 min-h-screen  ">
       <div className="flex flex-col font-dancing  fixed space-y-20 top-32 -left-9 sm:left-0 lg:-left-10 p-4">
-        <p className="rotate-90 transition duration-300 text-2xl ease-in-out cursor-pointer   font-bold">Popular</p>
-        <p className="rotate-90 transition duration-300 text-2xl ease-in-out cursor-pointer   font-bold">Vintage</p>
-        <p className="rotate-90 transition duration-300 text-2xl ease-in-out cursor-pointer   font-bold">Wedding</p>
+        <p className="rotate-90 transition duration-300 text-2xl ease-in-out cursor-pointer text-deepPlum  font-bold">Popular</p>
+        <p className="rotate-90 transition duration-300 text-2xl ease-in-out cursor-pointer  text-deepPlum font-bold">Vintage</p>
+        <p className="rotate-90 transition duration-300 text-2xl ease-in-out cursor-pointer  text-deepPlum font-bold">Wedding</p>
       </div>
 
       <section className="bg-transparent w-full text-deepPlum p-4 text-center ">
@@ -149,7 +149,7 @@ const UserPage = () => {
   </div>
       <Link to='/shop'>
       <button className="bg-roseGold text-md mr-3 text-white px-3 py-1 rounded-md hover:bg-deepPlum transition duration-300">
-        Rent Now
+        Buy Now
       </button>
       </Link>
     </div>
@@ -182,7 +182,7 @@ const UserPage = () => {
 
   <Link to='/shop' >
   <button className="bg-roseGold text-md mr-3 text-white px-3 py-1 rounded-md hover:bg-deepPlum transition duration-300">
-    Rent Now
+    Buy Now
   </button>
   </Link>
 </div>

@@ -38,34 +38,79 @@ const CheckoutForm = ({ orderId, amount }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="w-full max-w-md mx-auto mt-4 bg-white shadow-lg rounded-lg p-6">
-      <h2 className="text-lg font-semibold text-gray-700 text-center mb-4">Complete Your Payment</h2>
-      <CardElement
-        className="border border-gray-300 p-3 rounded-lg mb-4"
-        options={{
-          style: {
-            base: {
-              fontSize: '16px',
-              color: '#424770',
-              '::placeholder': {
-                color: '#aab7c4',
+    <form 
+      onSubmit={handleSubmit} 
+      className="w-full max-w-md mx-auto mt-4 bg-white shadow-lg rounded-lg p-6 space-y-4">
+      <h2 className="text-2xl font-semibold text-gray-700 text-center mb-4">Complete Your Payment</h2>
+      <div>
+        <label className="block text-gray-600 font-medium mb-1" htmlFor="name">
+          Full Name
+        </label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          className="w-full border border-gray-300 p-3 rounded-lg focus:ring focus:ring-purple-500 focus:border-purple-500"
+          placeholder="Enter your full name"
+        />
+      </div>
+  
+      <div>
+        <label className="block text-gray-600 font-medium mb-1" htmlFor="email">
+          Email Address
+        </label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          className="w-full border border-gray-300 p-3 rounded-lg focus:ring focus:ring-purple-500 focus:border-purple-500"
+          placeholder="Enter your email"
+        />
+      </div>
+  
+      <div>
+        <label className="block text-gray-600 font-medium mb-1" htmlFor="card-element">
+          Card Details
+        </label>
+        <CardElement
+          id="card-element"
+          className="border border-gray-300 p-3 rounded-lg"
+          options={{
+            style: {
+              base: {
+                fontSize: '16px',
+                color: '#424770',
+                '::placeholder': { color: '#aab7c4' },
               },
+              invalid: { color: '#9e2146' },
             },
-            invalid: {
-              color: '#9e2146',
-            },
-          },
-        }}
-      />
+          }}
+        />
+      </div>
+  
       <button
         type="submit"
         disabled={processing || !stripe || !elements}
-        className="w-full bg-deepPlum text-white py-2 px-4 rounded-lg hover:bg-purple-600 transition duration-200"
+        className={`w-full bg-deepPlum text-white py-3 px-4 rounded-lg 
+                    hover:bg-purple-600 transition duration-200 
+                    ${processing ? 'opacity-50 cursor-not-allowed' : ''}`}
       >
-        {processing ? 'Processing...' : 'Pay Now'}
+        {processing ? (
+          <div className="flex items-center justify-center">
+            <svg className="animate-spin h-5 w-5 mr-3 text-white" viewBox="0 0 24 24">
+              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4l3 3-3 3v4a8 8 0 01-8-8z"></path>
+            </svg>
+            Processing...
+          </div>
+        ) : (
+          'Pay Now'
+        )}
       </button>
-      {error && <div className="text-red-500 mt-3">{error}</div>}
-      {succeeded && <div className="text-green-500 mt-3">Payment successful!</div>}
+      {error && <div className="text-red-500 text-center mt-3">{error}</div>}
+      {succeeded && <div className="text-green-500 text-center mt-3">Payment successful!</div>}
     </form>
   );
 };

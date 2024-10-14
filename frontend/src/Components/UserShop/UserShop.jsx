@@ -75,7 +75,7 @@ const UserShop = () => {
     setSelectedProduct(product);
   };
   const calculateTotalPrice = () => {
-    return cartItems.reduce((total, item) => total + item.new_price * item.quantity, 0);
+    return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
   };
   const increaseQuantity = (id) => {
     setCartItems((prevItems) =>
@@ -188,7 +188,7 @@ const UserShop = () => {
               className="w-full h-72  mb-4 rounded-2xl"
             />
             <h3 className="text-2xl font-bold text-deepPlum mb-2 text-center">{selectedProduct.name}</h3>
-            <p className="text-gray-500 mb-6 text-center ">Price: {selectedProduct.new_price} Dz</p>
+            <p className="text-gray-500 mb-6 text-center ">Price: {selectedProduct.price} Dz</p>
             <div className="flex justify-center">
                     <button
                         onClick={() => addToCart(selectedProduct)} 
@@ -253,7 +253,7 @@ const UserShop = () => {
 
            <div className="flex-1 ml-4">
              <span className="block text-md font-semibold text-gray-900">{item.name}</span>
-             <span className="block text-sm text-gray-500 mt-1">{item.new_price}  Dz</span>
+             <span className="block text-sm text-gray-500 mt-1">{item.price}  Dz</span>
              <span className="block text-sm text-gray-400 mt-1">Size: {item.size}</span>
            </div>
 

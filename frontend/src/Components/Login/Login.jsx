@@ -11,7 +11,7 @@ const Login = () => {
   const signin = async () => {
     console.log('login function ', formData);
     let responseData;
-    await fetch('http://192.168.1.38:4000/signin', {
+    await fetch('https://luxeona-server.onrender.com/signin', {
       method: 'POST',
       headers: {
         Accept: 'application/json',

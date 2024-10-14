@@ -11,7 +11,7 @@ const Dashboard = () => {
     useEffect(() => {
         const fetchTotalProducts = async () => {
             try {
-                const response = await fetch('http://192.168.1.38:4000/api/products/count');
+                const response = await fetch('https://luxeona-server.onrender.com/api/products/count');
                 const data = await response.json();
                 setTotalProducts(data.total); 
             } catch (error) {
@@ -23,7 +23,7 @@ const Dashboard = () => {
     useEffect(() => {
         const fetchCategoryData = async () => {
             try {
-                const response = await fetch('http://192.168.1.38:4000/api/admin/products/count-by-category');
+                const response = await fetch('https://luxeona-server.onrender.com/api/admin/products/count-by-category');
                 const data = await response.json();
                 setCategoryData(data);
             } catch (error) {
@@ -35,7 +35,7 @@ const Dashboard = () => {
     useEffect(() => {
         const fetchTotalProducts = async () => {
             try {
-                const response = await fetch('http://192.168.1.38:4000/api/products/count');
+                const response = await fetch('https://luxeona-server.onrender.com/api/products/count');
                 const data = await response.json();
                 setTotalProducts(data.total); 
             } catch (error) {

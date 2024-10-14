@@ -38,7 +38,7 @@ const DeletProduct = () => {
             className="w-full sm:w-20 sm:h-20 object-cover rounded-lg mb-2 sm:mb-0" 
           />
           <p className=" text-gray-800">{product.name}</p>
-          <p className="text-gray-800">${product.new_price}</p>
+          <p className="text-gray-800">${product.price}</p>
           <p className="text-gray-800 text-center sm:text-left">{product.category}</p>
         <button onClick={() => {remove_product(product.id)}} className="bg-red-500 text-white px-4 py-2 rounded-lg">Delete</button>
         </div>

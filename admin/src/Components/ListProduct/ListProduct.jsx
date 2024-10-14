@@ -27,7 +27,7 @@ const ListProduct = () => {
           className="w-full sm:w-20 sm:h-20 object-cover rounded-lg mb-2 sm:mb-0" 
         />
         <p className=" text-gray-800">{product.name}</p>
-        <p className="text-gray-600">${product.new_price}</p>
+        <p className="text-gray-600">${product.price}</p>
         <p className="text-gray-800 text-center sm:text-left">{product.category}</p>
         <p className="text-gray-800 text-center sm:text-left">Yes</p>
       </div>

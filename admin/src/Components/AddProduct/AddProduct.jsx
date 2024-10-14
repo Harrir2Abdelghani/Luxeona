@@ -4,7 +4,7 @@ const AddProduct = () => {
   const [image, SetImage] = React.useState(null);
   const [productDetails, setProductDetails] = React.useState({
     name: "",
-    new_price: "",
+    price: "",
     category: "men",
     image: "",
   });
@@ -70,8 +70,8 @@ const AddProduct = () => {
       <p className="text-gray-700 font-semibold mb-2">Price</p>
       <input
         type="text"
-        name="new_price"
-        value={productDetails.new_price}
+        name="price"
+        value={productDetails.price}
         onChange={changeHandler}
         placeholder="Type price"
         className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-rose-500 focus:outline-none"

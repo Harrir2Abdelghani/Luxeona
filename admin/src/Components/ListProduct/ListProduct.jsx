@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 const ListProduct = () => {
     const [allproducts, setAllProducts] = useState([]);
     const fetchInfo = async () => {
-        await fetch('http://192.168.1.38:4000/allproducts').then((res) => {
+        await fetch('https://luxeona-server.onrender.com/allproducts').then((res) => {
             res.json().then((data) => {
                 setAllProducts(data);
             })

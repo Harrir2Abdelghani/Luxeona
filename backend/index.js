@@ -1,5 +1,5 @@
 // here in this file we will create the main express node js server file , some endpoints and  the main architecture of the mongodb schema and 
-const port = 4000;
+const port = process.env.PORT || 4000;
 const express = require("express");
 const app = express();
 const cors = require("cors");
@@ -49,7 +49,7 @@ app.use("/images", express.static("upload/images"));
 app.post("/upload", upload.single('product'), (req, res) => {
     res.json({
         success: 1,
-        image_url: `http://192.168.1.38:${port}/images/${req.file.filename}`
+        image_url: `https://luxeona-server.onrender.com/images/${req.file.filename}`
     })
 })
 
